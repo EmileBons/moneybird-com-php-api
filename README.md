@@ -38,5 +38,6 @@ to composer will be done as soon as possible.
 This library is available under the MIT License (MIT), see LICENSE for more information.
 ## OAuth clients
 - Yii2 OAuth 2.0 MoneyBird: https://github.com/EmileBons/yii2-oauth2-moneybird-com
+
 ## Documentation
 Documentation of the http://moneybird.com API is available at http://developer.moneybird.com.
