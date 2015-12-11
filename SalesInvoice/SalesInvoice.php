@@ -121,4 +121,20 @@ class SalesInvoice
      */
     public $workflowId;
 
+    /**
+     * @return \DateTime the due date as a DateTime object
+     */
+    public function getDueDateTime()
+    {
+        return \DateTime::createFromFormat('Y-m-d', $this->dueDate);
+    }
+
+    /**
+     * @return \DateTime the invoice date as a DateTime object
+     */
+    public function getInvoiceDateTime()
+    {
+        return \DateTime::createFromFormat('Y-m-d', $this->invoiceDate);
+    }
+
 }
