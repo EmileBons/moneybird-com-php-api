@@ -71,7 +71,7 @@ class BaseFactory
      */
     public function listAll($filter = array())
     {
-        $params = $filter ? array() : array('filter' => $this->createFilter($filter));
+        $params = $filter ? array('filter' => $this->createFilter($filter)) : array();
         $response = $this->client->api($this->apiSubUrl.'.json', 'GET', $params);
         $objects = [];
         foreach($response as $array)
