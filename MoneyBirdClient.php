@@ -331,4 +331,22 @@ class MoneyBirdClient
 
         return $this->processResponse($response, $this->determineContentTypeByHeaders($responseHeaders));
     }
+
+
+    /**
+     * Autoloader
+     *
+     * To use, include spl_autoload_register('moneybird\MoneyBirdClient::autoload');
+     * @static
+     * @param string $className
+     */
+    static public function autoload($className)
+    {
+        if (strpos($className, __NAMESPACE__) === 0) {
+            $className = substr($className, strlen(__NAMESPACE__) + 1);
+            if (file_exists(__DIR__ . '/' . str_replace('\\', '/', $className) . '.php')) {
+                require_once __DIR__ . '/' . str_replace('\\', '/', $className) . '.php';
+            }
+        }
+    }
 }
